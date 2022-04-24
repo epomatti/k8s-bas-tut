@@ -43,3 +43,17 @@ kubectl scale deployments/kubernetes-bootcamp --replicas=2
 ```
 
 ### Rolling Updates
+
+```sh
+# updating to v2
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=jocatalin/kubernetes-bootcamp:v2
+# confirming rollout status
+kubectl rollout status deployments/kubernetes-bootcamp
+
+# updating failed image v10
+kubectl set image deployments/kubernetes-bootcamp kubernetes-bootcamp=gcr.io/google-samples/kubernetes-bootcamp:v10
+# undo the rollout
+kubectl rollout undo deployments/kubernetes-bootcamp
+# sanity check
+kubectl get deploy -o wide
+```
