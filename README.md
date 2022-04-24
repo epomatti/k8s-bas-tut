@@ -12,7 +12,7 @@ minikube start
 kubectl create deployment kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1
 ```
 
-Access the application:
+### External Access
 
 ```sh
 # Option 1: "NodePort"
@@ -26,6 +26,20 @@ minikube tunnel
 curl localhost:8080
 ```
 
+### Labeling
+
 ```sh
 kubectl label $(kubectl get pods -o name) version=v1
 ```
+
+### Scaling
+
+```sh
+# scale up
+kubectl scale deployments/kubernetes-bootcamp --replicas=4
+
+# scale down
+kubectl scale deployments/kubernetes-bootcamp --replicas=2
+```
+
+### Rolling Updates
