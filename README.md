@@ -26,3 +26,6 @@ minikube tunnel
 curl localhost:8080
 ```
 
+```sh
+kubectl label $(kubectl get pods -o name) version=v1
+```
