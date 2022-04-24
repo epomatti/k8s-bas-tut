@@ -1,6 +1,8 @@
-# Kubernetes Demo
+# Kubernetes Basics
 
-Requirements: Docker, kubectl, minikube
+Requirements: docker, kubectl, minikube
+
+From: https://kubernetes.io/docs/tutorials/
 
 ### Minikube Setup
 
